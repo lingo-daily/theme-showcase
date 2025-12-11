@@ -1,0 +1,26 @@
+// theme-showcase.scss
+.showcase-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.spacer {
+  margin: 32px 0;
+}
+
+.example-card {
+  max-width: 400px;
+}

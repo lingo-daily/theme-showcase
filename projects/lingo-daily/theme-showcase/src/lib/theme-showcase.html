@@ -1,0 +1,73 @@
+<div class="showcase-container">
+  <h1>Theme Showcase</h1>
+  <p class="mat-body-1">Reviewing application typography and color palettes.</p>
+
+  <section>
+    <h2>Buttons</h2>
+    <div class="row">
+      <button mat-button>Basic</button>
+      <button mat-button color="primary">Primary</button>
+      <button mat-button color="accent">Accent</button>
+      <button mat-button color="warn">Warn</button>
+      <button mat-button disabled>Disabled</button>
+    </div>
+    <div class="row">
+      <button mat-raised-button>Raised</button>
+      <button mat-raised-button color="primary">Primary</button>
+      <button mat-raised-button color="accent">Accent</button>
+      <button mat-raised-button color="warn">Warn</button>
+    </div>
+    <div class="row">
+      <button matFab color="primary"><mat-icon>add</mat-icon></button>
+      <button matFab color="accent"><mat-icon>edit</mat-icon></button>
+      <button matMiniFab color="warn"><mat-icon>delete</mat-icon></button>
+    </div>
+  </section>
+
+  <mat-divider class="spacer"></mat-divider>
+
+  <section>
+    <h2>Form Inputs</h2>
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Fill Input</mat-label>
+        <input matInput placeholder="Ex. Pizza">
+        <mat-icon matSuffix>favorite</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Outline Input</mat-label>
+        <input matInput placeholder="Ex. Pizza">
+      </mat-form-field>
+
+      <mat-checkbox color="primary" [checked]="true">Primary Checkbox</mat-checkbox>
+      <mat-checkbox color="warn" [checked]="true">Warn Checkbox</mat-checkbox>
+    </div>
+  </section>
+
+  <mat-divider class="spacer"></mat-divider>
+
+  <section>
+    <h2>Cards & Feedback</h2>
+    <div class="row">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Card Title</mat-card-title>
+          <mat-card-subtitle>Subtitle</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>This is standard card content showing body text.</p>
+          <mat-chip-set>
+            <mat-chip>Chip One</mat-chip>
+            <mat-chip color="accent">Accent Chip</mat-chip>
+          </mat-chip-set>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card>
+    </div>
+  </section>
+</div>

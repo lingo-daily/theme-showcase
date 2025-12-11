@@ -3,5 +3,31 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "@lingo-daily/theme-showcase": {
+      "projectType": "library",
+      "root": "projects/lingo-daily/theme-showcase",
+      "sourceRoot": "projects/lingo-daily/theme-showcase/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lingo-daily/theme-showcase/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/lingo-daily/theme-showcase/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/lingo-daily/theme-showcase/tsconfig.spec.json"
+          }
+        }
+      }
+    }
   }
 }
