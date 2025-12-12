@@ -1,16 +1,36 @@
 <div class="showcase-container">
-  <h1>Theme Showcase</h1>
+  <h1>Theme Showcase H1</h1>
   <p class="mat-body-1">Reviewing application typography and color palettes.</p>
 
   <section>
-    <h2>Buttons</h2>
-    <div class="row">
-      <button matButton>Basic</button>
-      <button matButton color="primary">Primary</button>
-      <button matButton color="accent">Accent</button>
-      <button matButton color="warn">Warn</button>
-      <button matButton disabled>Disabled</button>
-    </div>
+    <h2>Buttons H2</h2>
+    <h3>Colors (Legacy Way) H3</h3>
+    @for (appearance of buttonAppearances; track appearance) {
+      <h4>Appearance: {{ appearance }} H3</h4>
+      <div class="row" [className]="appearance">
+        @for (color of buttonColors; track color) {
+          <button [matButton]="appearance" [color]="color">{{ color | titlecase }}</button>
+        }
+        <button [matButton]="appearance" disabled>Disabled</button>
+      </div>
+    }
+
+    <h3>Classes (Modern Way) H3</h3>
+    @for (appearance of buttonAppearances; track appearance; let index = $index) {
+      <h4>Appearance: {{ appearance }} H3</h4>
+
+      <mat-form-field appearance="fill">
+        <mat-label>{{ index + 1 }}. Button Class Name</mat-label>
+        <input matInput placeholder="Ex. accent" [(ngModel)]="buttonClasses[index]">
+      </mat-form-field>
+
+      <div class="row" [className]="appearance">
+        @for (buttonClass of buttonClasses; track buttonClass) {
+          <button [matButton]="appearance" [class]="buttonClass">{{ buttonClass | titlecase }}</button>
+        }
+        <button [matButton]="appearance" disabled>Disabled</button>
+      </div>
+    }
 
     <div class="row">
       <button matButton="elevated">Elevated</button>
@@ -20,17 +40,38 @@
     </div>
 
     <div class="row">
-      <button matButton="filled" (click)="openSnackbar('This is a default snackbar')">Snackbar</button>
-      <button matButton="filled" color="primary" (click)="openSnackbar('This is a success snackbar', 'success')">Success</button>
-      <button matButton="filled" color="accent" (click)="openSnackbar('This is an infor snackbar', 'info')">Info</button>
-      <button matButton="filled" color="warn" (click)="openSnackbar('This is an error snackbar', 'error')">Error</button>
+      <button matButton="filled"
+              (click)="openSnackbar('This is a default snackbar')">
+        Snackbar
+      </button>
+
+      <button matButton="filled" class="primary"
+              (click)="openSnackbar('This is a success snackbar', 'success')">
+        Success
+      </button>
+
+      <button matButton="filled" class="accent"
+              (click)="openSnackbar('This is an info snackbar', 'info')">
+        Info
+      </button>
+
+      <button matButton="filled" class="warn"
+              (click)="openSnackbar('This is an error snackbar', 'error')">
+        Error
+      </button>
     </div>
 
     <h3>FAB and miniFAB</h3>
     <div class="row">
-      <button matFab color="primary"><mat-icon>add</mat-icon></button>
-      <button matFab color="accent"><mat-icon>edit</mat-icon></button>
-      <button matMiniFab color="warn"><mat-icon>delete</mat-icon></button>
+      <button matFab color="primary">
+        <mat-icon>add</mat-icon>
+      </button>
+      <button matFab color="accent">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button matMiniFab color="warn">
+        <mat-icon>delete</mat-icon>
+      </button>
     </div>
   </section>
 

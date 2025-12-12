@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {MatButton, MatFabButton, MatMiniFabButton} from '@angular/material/button';
+import {CommonModule} from '@angular/common';
+import {MatButton, MatButtonAppearance, MatFabButton, MatMiniFabButton} from '@angular/material/button';
 import {
   MatCard,
   MatCardActions,
@@ -10,11 +10,11 @@ import {
   MatCardTitle
 } from '@angular/material/card';
 import {MatHint, MatInput, MatLabel} from '@angular/material/input';
-import { MatFormField } from '@angular/material/form-field';
-import { MatIcon } from '@angular/material/icon';
-import { MatCheckbox } from '@angular/material/checkbox';
-import { MatProgressBar } from '@angular/material/progress-bar';
-import { MatChipsModule } from '@angular/material/chips';
+import {MatFormField} from '@angular/material/form-field';
+import {MatIcon} from '@angular/material/icon';
+import {MatCheckbox} from '@angular/material/checkbox';
+import {MatProgressBar} from '@angular/material/progress-bar';
+import {MatChipsModule} from '@angular/material/chips';
 import {MatDivider} from '@angular/material/list';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormsModule} from '@angular/forms';
@@ -50,6 +50,14 @@ import {FormsModule} from '@angular/forms';
 export class ThemeShowcaseComponent {
   private snackbar = inject(MatSnackBar);
   formClass = '';
+  buttonColors = ['', 'primary', 'secondary', 'tertiary', 'accent', 'warn' ];
+  buttonClasses = ['primary', 'accent', 'warn'] ;
+  protected readonly buttonAppearances:  MatButtonAppearance[] = ['text','filled','elevated' ,'outlined' ,'tonal'];
+
+  addButtonClass() {
+    this.buttonClasses = [...this.buttonClasses, 'your-button-class'];
+  }
+
   openSnackbar(message: string, sbClass = '') {
     this.snackbar.open(message, '×',  {panelClass: sbClass});
   }
